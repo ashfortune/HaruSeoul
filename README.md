@@ -1,134 +1,120 @@
-![대표이미지](https://github.com/user-attachments/assets/28920dfe-03a0-4ffe-b74f-41cc5ae70e16)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/28920dfe-03a0-4ffe-b74f-41cc5ae70e16" alt="HaruSeoul 대표이미지" width="100%" />
 
-# HaruSeoul (하루서울)
-> 서울의 하루를 특별하게 만들어 줄, **호스트 기반 로컬 여행 프로그램 예약 플랫폼**
-> 
-> 개인 호스트가 기획한 서울 여행 프로그램을 손쉽게 등록하고,
-> 
-> 게스트가 자유롭게 탐색·예약할 수 있는 로컬 경험 기반 여행 플랫폼입니다.
+  # 🏮 HaruSeoul (하루서울)
+  **"서울의 하루를 특별하게 만드는 로컬 경험, 하루서울과 함께하세요."**
 
----
-
-
-## 📌 프로젝트 개요
-
-### 🔹 프로젝트 주제
-> **개인 호스트가 기획한 서울 여행 프로그램을 게스트가 탐색하고 예약할 수 있는 웹 플랫폼**
-
-- 호스트는 자신만의 여행 프로그램을 등록·공개할 수 있고  
-- 게스트는 다양한 필터를 통해 원하는 경험을 검색하고 예약할 수 있습니다.
-
-### 🔹 주제 선정 배경
-- 기존 여행 플랫폼이 제공하는 **획일화된 패키지 상품**이 아닌,
-  **로컬 호스트의 경험 기반 프로그램**에 대한 수요 증가
-- 코로나 이후 **개인 맞춤형 소규모 투어**와 **문화 교류형 여행** 선호도 증가
-
-### 🔹 프로젝트 차별점
-- **호스트 중심의 관리 시스템**과 **게스트 중심의 예약 시스템**을 분리 개발
-- 실시간 예약 알림 시스템(SSE)으로 **예약 상태 변화 알림** 제공
-- Vue/Nuxt3 기반 **SPA 구조**로 빠르고 직관적인 사용자 경험 제공
-- Spring Boot 기반의 RESTful API로 확장성과 유지 보수성 확보
-- 자격요건(가이드 경력 등)을 요구하는 대다수 투어 상품 웹서비스와 달리 서울 현지인이면 누구나 호스트로 참여가능
-- 하루 단시간 일정이므로 참여 및 가이드에 대한 낮은 부담
+  [![Stack](https://img.shields.io/badge/Stack-Nuxt3--Spring--Boot-orange?style=flat-square)](#)
+  [![Platform](https://img.shields.io/badge/Platform-Web-blue?style=flat-square)](#)
+  [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](#)
+</div>
 
 ---
 
+## 📌 프로젝트 소개 (About the Project)
+**HaruSeoul**은 개인 호스트가 직접 기획한 창의적인 서울 여행 프로그램을 탐색하고 예약할 수 있는 **호스트 기반 로컬 여행 예약 플랫폼**입니다. 기존 대형 플랫폼의 획일화된 패키지 투어를 넘어, 현지인이 공유하는 살아있는 경험과 소규모 맞춤형 투어를 지향합니다.
 
-## 📌 프로젝트 구성원
-
-| 김민지               | 김민석                | 유재복                | 김준성                |
-|----------------------|-----------------------|-----------------------|-----------------------|
-| 팀장                 | 팀원                  | 팀원                  | 팀원                  |
-| 호스트 프로그램 관리 시스템 | 호스트 예약 관리 시스템 | 게스트 프로그램 조회 시스템 | 게스트 예약 관리 시스템 |
-
-
-***
-
-
-
-## 📌 주요 기능
-
-### 🔹 게스트 전용 기능
-- 여행 프로그램 목록 탐색 (카테고리, 날짜, 상태 필터)
-- 프로그램 상세 정보 확인
-- 프로그램 예약 및 예약 취소
-- 마이페이지에서 예약 현황 확인
-
-### 🔹 호스트 전용 기능
-- 여행 프로그램 등록 / 수정 / 삭제
-- 프로그램 경로(Route), 정원, 발행 상태 설정
-- 예약 내역 확인 및 승인 / 거절 처리
-- 프로그램 발행 여부 상태 관리
-
-### 🔹 공통 / 시스템 기능
-- JWT 기반 로그인 및 인증 처리
-- 실시간 알림 (SSE 기반)
-- 예약 상태 필터 / 날짜 범위 필터 등 고급 검색 기능
-- 다중 모달 기반 UX 설계
+- **목표**: 누구나 서울의 호스트가 되어 가치 있는 경험을 공유하고, 게스트는 특별한 서울의 하루를 발견하도록 돕습니다.
+- **차별점**: 가이드 자격 요건 없이 현지 실정에 밝은 서울 시민이면 누구나 호스트로 참여 가능 (낮은 진입 장벽, 고유한 로컬리티 확보).
 
 ---
 
+## 🛠 기술 스택 (Tech Stack)
 
-## 📌 시스템별 기능 정리
+### **Frontend**
+- **Framework**: <img src="https://img.shields.io/badge/Nuxt_3-00DC82?style=flat-square&logo=nuxtdotjs&logoColor=white" /> (Vue 3, Composition API)
+- **styling**: SCSS, Flexbox, Responsive Design
+- **State/Auth**: JWT (JSON Web Token), Axios, Composable API
+- **User Experience**: Multi-modal UX, SSE Real-time Notification
 
-### 1️⃣ 호스트 프로그램 관리 시스템
-
-| 기능명 | 상세 설명 |
-|--------|----------|
-| 프로그램 등록/수정 | 루트(Route), 교통수단, 설명, 이미지 등 포함 |
-| 발행 상태 관리 | 프로그램 공개 여부(Publish/Unpublish) 전환 |
-| 필터 제공 | 발행일/카테고리/상태 기준 검색 및 필터 |
-
-→ 관련 파일: `pages/host/programs/new.vue`, `routeTemplete.vue`, `routeTempleteForEdit.vue`
-
----
-
-### 2️⃣ 호스트 예약 관리 시스템
-
-| 기능명 | 상세 설명 |
-|--------|----------|
-| 예약 내역 확인 | 게스트 신청 내역 리스트 확인 |
-| 예약 상태 변경 | 승인/거절, 이동 처리 기능 포함 |
-| 상태 필터링 | 예약 상태, 날짜 기준 필터 적용 가능 |
-
-→ 관련 파일: `pages/host/reservations/index.vue`, `CancelReservationModal.vue`, `MoveReservationModal.vue`
+### **Backend**
+- **Framework**: <img src="https://img.shields.io/badge/Spring_Boot_3.3-6DB33F?style=flat-square&logo=springboot&logoColor=white" /> (Java 21)
+- **Data Access**: Spring Data JPA + MyBatis (Hybrid Approach)
+- **Security**: Spring Security + JWT
+- **Communication**: SSE (Server-Sent Events) for Real-time alerts
+- **Database**: <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" />
 
 ---
 
-### 3️⃣ 게스트 프로그램 탐색 / 예약 시스템
+## 🚀 주요 기능 (Key Features)
 
-| 기능명 | 상세 설명 |
-|--------|----------|
-| 프로그램 리스트 조회 | 필터 조건으로 탐색 가능 (카테고리, 상태 등) |
-| 상세 보기 | 프로그램 상세 정보 및 루트 정보 확인 |
-| 예약 신청/취소 | 모달 기반으로 예약 생성/취소 처리 |
-| 마이페이지 내역 | 내 예약 정보 확인 가능 |
+### 🍱 게스트 시스템 (Guest Portal)
+- **탐색**: 카테고리, 날짜, 프로그램 상태별 필터를 통한 직관적인 프로그램 탐색
+- **예약**: 실시간 가입/로그인 기반 예약 신청 및 취소 프로세스
+- **관리**: 마이페이지를 통한 예약 현황 모니터링 및 이력 관리
 
-→ 관련 파일: `pages/programs/index.vue`, `pages/programs/[id]/index.vue`, `CreateReservationModal.vue`
+### 🏠 호스트 시스템 (Host Portal)
+- **프로그램 운영**: 프로그램 신규 등록, 상세 정보(경로, 교통수단, 인원) 수정 및 삭제
+- **예약 거버넌스**: 게스트 예약 신청에 대한 실시간 승인/거절 처리
+- **상태 관리**: 프로그램 발행 여부(Publish/Unpublish) 즉각 제어
 
----
-
-### 4️⃣ 공통 시스템 기능
-
-| 기능명 | 설명 |
-|--------|------|
-| 로그인 인증 처리 | JWT 인증, `auth.global.ts`, `useAuthFetch.js` 활용 |
-| 알림 시스템 | SSE 기반 실시간 예약 상태 알림 (호스트·게스트 모두 수신 가능) |
-| 컴포저블 활용 | 예약, 인증, 유저정보 관련 useFetch 함수 분리 관리 |
-
-→ 관련 백엔드: `NotificationController.java`, `NotificationService.java`, `SseClientRegistry.java`
+### 🔔 공통 및 시스템 기능
+- **실시간 알림**: SSE 기술을 활용하여 예약 상태 변화 시 호스트와 게스트에게 즉각적인 피드백 제공
+- **인증 보안**: 최신 JWT 인증 방식을 통해 안전한 계정 정보 및 권한 관리 수행
 
 ---
 
+## 📂 프로젝트 구조 (Project Structure)
 
-## 📌 기술 스택
-
-| 구분 | 기술 |
-|------|------|
-| **Front-End** | Nuxt3 (Vue3), Composition API, SCSS, Axios |
-| **Back-End** | Spring Boot, Spring Data JPA, REST API, MariaDB |
-| **인증/보안** | Spring Security + JWT |
-| **알림 기능** | SSE (Server-Sent Events) 기반 실시간 예약 알림 |
-| **기타** | GitHub Actions (형상관리), Notion (문서화), Figma (UI 초안) |
+```text
+HaruSeoul /
+├── backend /               # Spring Boot Application
+│   ├── src/main/java/      # Java Source (com.m2j2.HaruSeoul)
+│   │   ├── auth /          # Security & JWT logic
+│   │   ├── host /          # Host-side controllers & services
+│   │   ├── guest /         # Guest-side logic
+│   │   ├── notification /  # SSE & Real-time alert logic
+│   │   └── entity /        # JPA Entities
+│   └── pom.xml             # Maven Dependencies
+├── frontend /              # Nuxt 3 Project
+│   └── haruseoul-nuxt3 /
+│       ├── pages /         # File-system based Routing
+│       ├── layouts /       # Shared Layouts
+│       ├── components /    # Reusable Vue components
+│       ├── composables /   # Shared logic hooks
+│       └── nuxt.config.ts  # Nuxt Configuration
+└── README.md
+```
 
 ---
+
+## 🚦 시작하기 (Getting Started)
+
+### Prerequisites
+- Java 21+
+- Node.js 18.x+
+- MariaDB
+
+### 로컬 실행 방법
+
+#### 1. Backend (Spring Boot)
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+- API Endpoint: `http://localhost:8080` (기본값)
+
+#### 2. Frontend (Nuxt 3)
+```bash
+cd frontend/haruseoul-nuxt3
+npm install
+npm run dev
+```
+- Application Address: `http://localhost:3003`
+
+---
+
+## 👥 팀원 (Team Members)
+
+| 이름 | 역할 | 담당 시스템 |
+| :--- | :--- | :--- |
+| **김민지** | 팀장 | 호스트 프로그램 관리 시스템 구축 |
+| **김민석** | 팀원 | 호스트 예약 관리 시스템 및 승인 로직 |
+| **유재복** | 팀원 | 게스트 프로그램 조회 및 필터 고도화 |
+| **김준성** | 팀원 | 게스트 예약 신청/취소 및 마이페이지 관리 |
+
+---
+
+<div align="center">
+  © 2024 HaruSeoul Team. All Rights Reserved.
+</div>
