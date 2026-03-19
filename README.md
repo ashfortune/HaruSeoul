@@ -54,6 +54,24 @@
 
 ---
 
+## 🔍 트러블슈팅 (Troubleshooting)
+
+### 1️⃣ 실시간 알림(SSE) 연결 관리 및 타임아웃
+- **문제(Problem)**: 브라우저 기본 타임아웃으로 인해 서버와의 연결이 끊기거나, 비정상 종료된 클라이언트 리소스가 잔류하는 이슈 발생.
+- **해결(Solution)**: 
+  - `SseEmitter` 생성 시 타임아웃을 `0L`(무제한)로 설정하여 안정적인 연결을 확보했습니다.
+  - 사용자별 세션을 안전하게 관리하기 위해 `ConcurrentHashMap` 기반의 `SseClientRegistry`를 구축하고, `onCompletion`, `onTimeout` 등 생명주기 콜백을 통해 리소스 누수를 원천 차단했습니다.
+
+### 2️⃣ 프론트엔드-백엔드 간 CORS 정책 대응
+- **문제(Problem)**: 개발 환경에서 프론트엔드(`3003`)와 백엔드(`8083`)의 포트 불일치로 인한 API 요청 차단 현상.
+- **해결(Solution)**: Spring Security(`WebSecurityConfig`)에서 `CorsConfigurationSource`를 정의하고 프론트엔드 도메인을 명시적으로 허용하여 협업 및 개발 편의성을 높였습니다.
+
+### 3️⃣ 멀티파트 업로드 정적 이미지 접근 에러
+- **문제(Problem)**: 호스트가 업로드한 이미지가 실제 로컬 저장소에는 존재하지만, 웹 상에서 엑박(404)으로 뜨는 문제.
+- **해결(Solution)**: `WebMvcConfigurer`를 구현하여 `/api/v1/uploads/**` 가상 경로를 실제 파일 저장소(`/uploads/`)와 매핑하는 `addResourceHandlers`를 설정하여 해결했습니다.
+
+---
+
 ## 📂 프로젝트 구조 (Project Structure)
 
 ```text
